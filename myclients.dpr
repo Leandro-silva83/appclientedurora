@@ -3,13 +3,13 @@
 uses
   System.StartUpCopy,
   FMX.Forms,
-  untprincipal in 'view\untprincipal.pas' {Form1},
-  untclient in 'frames\untclient.pas' {Frame1: TFrame};
+  untclient in 'frames\untclient.pas' {Frame1: TFrame},
+  Unitprinc in 'view\Unitprinc.pas' {Form2};
 
 {$R *.res}
 
 begin
   Application.Initialize;
-  Application.CreateForm(TForm1, Form1);
+  Application.CreateForm(TForm2, Form2);
   Application.Run;
 end.

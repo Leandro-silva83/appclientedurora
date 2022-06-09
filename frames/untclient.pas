@@ -31,6 +31,8 @@ type
     labdetped: TLabel;
     Layout11: TLayout;
     imgaddped: TImage;
+    Rectangle1: TRectangle;
+    Layout9: TLayout;
   private
     { Private declarations }
   public

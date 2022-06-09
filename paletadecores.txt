@@ -1,1 +1,2 @@
-cores images icon #6A2626
+cores images icon #FFFAFBFB
+font-color #FFDDDBDB
