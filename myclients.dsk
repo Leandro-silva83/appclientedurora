@@ -11,11 +11,14 @@ File_8=TSourceModule,'C:\Users\Bete\Documents\Embarcadero\Studio\Projects\FieldR
 File_9=TSourceModule,'c:\program files (x86)\embarcadero\studio\21.0\source\rtl\common\System.UITypes.pas',0,1,485,1,515,0,0,,
 
 [Modules]
-Module0=C:\Users\Bete\Documents\Embarcadero\Studio\Projects\appclientedurora\view\Unitprinc.pas
-Module1=C:\Users\Bete\Documents\Embarcadero\Studio\Projects\appclientedurora\frames\untclient.pas
-Module2=default.htm
+Module0=default.htm
+Module1=C:\Users\Bete\Documents\Embarcadero\Studio\Projects\appclientedurora\view\Unitprinc.pas
+Module2=C:\Users\Bete\Documents\Embarcadero\Studio\Projects\appclientedurora\frames\untclient.pas
 Count=3
 EditWindowCount=1
+
+[default.htm]
+ModuleType=TURLModule
 
 [C:\Users\Bete\Documents\Embarcadero\Studio\Projects\appclientedurora\view\Unitprinc.pas]
 ModuleType=TSourceModule
@@ -23,12 +26,9 @@ ModuleType=TSourceModule
 [C:\Users\Bete\Documents\Embarcadero\Studio\Projects\appclientedurora\frames\untclient.pas]
 ModuleType=TSourceModule
 
-[default.htm]
-ModuleType=TURLModule
-
 [EditWindow0]
 ViewCount=3
-CurrentEditView=C:\Users\Bete\Documents\Embarcadero\Studio\Projects\appclientedurora\view\Unitprinc.pas
+CurrentView=0
 View0=0
 View1=1
 View2=2
@@ -68,8 +68,8 @@ WelcomePageURL=bds:/default.htm
 [View1]
 CustomEditViewType=TEditView
 Module=C:\Users\Bete\Documents\Embarcadero\Studio\Projects\appclientedurora\view\Unitprinc.pas
-CursorX=7
-CursorY=114
+CursorX=47
+CursorY=127
 TopLine=111
 LeftCol=1
 Elisions=
@@ -155,11 +155,11 @@ State=0
 Left=0
 Top=0
 Width=1999
-Height=7514
+Height=7802
 MaxLeft=-1
 MaxTop=-1
 ClientWidth=1999
-ClientHeight=7514
+ClientHeight=7802
 TBDockHeight=5907
 LRDockWidth=2350
 Dockable=1
@@ -171,13 +171,13 @@ Create=1
 Visible=0
 Docked=1
 State=0
-Left=1
-Top=27
-Width=9868
+Left=0
+Top=0
+Width=2767
 Height=3571
 MaxLeft=-1
 MaxTop=-1
-ClientWidth=9868
+ClientWidth=2767
 ClientHeight=3571
 TBDockHeight=3571
 LRDockWidth=2767
@@ -193,11 +193,11 @@ State=0
 Left=0
 Top=0
 Width=1999
-Height=7898
+Height=8187
 MaxLeft=-1
 MaxTop=-1
 ClientWidth=1999
-ClientHeight=7898
+ClientHeight=8187
 TBDockHeight=7157
 LRDockWidth=1999
 Dockable=1
@@ -222,11 +222,6 @@ LRDockWidth=1896
 Dockable=1
 StayOnTop=0
 SplitPos=111
-
-[PropInspDesignerSelection]
-ArrangeBy=Name
-SelectedItem=Align,OnMouseUp
-ExpandedItems=LiveBindings=0,"LiveBindings Designer=0",Margins=0,Padding=0,RotationCenter=0,Scale=0,Size=0,Touch=0,TouchTargetExpansion=0,SystemStatusBar=0,Anchors=0,Corners=0,Stroke=0,Position=0,Sides=0,FormFactor=0,Fill=1,Fill.Bitmap=0,Fill.Resource=0,ActiveTab=0,StyledSettings=0,TextSettings=1,TextSettings.Font=0,BitmapMargins=0
 
 [frmDesignPreview]
 PercentageSizes=1
@@ -651,14 +646,14 @@ Create=1
 Visible=0
 Docked=1
 State=0
-Left=4
-Top=24
+Left=8
+Top=8
 Width=1999
-Height=7898
+Height=8187
 MaxLeft=-1
 MaxTop=-1
 ClientWidth=1999
-ClientHeight=7898
+ClientHeight=8187
 TBDockHeight=8187
 LRDockWidth=1999
 Dockable=1
@@ -699,14 +694,14 @@ Create=1
 Visible=0
 Docked=1
 State=0
-Left=4
-Top=24
+Left=8
+Top=8
 Width=1999
-Height=7898
+Height=8187
 MaxLeft=-1
 MaxTop=-1
 ClientWidth=1999
-ClientHeight=7898
+ClientHeight=8187
 TBDockHeight=8187
 LRDockWidth=1999
 Dockable=1

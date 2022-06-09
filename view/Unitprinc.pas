@@ -126,7 +126,7 @@ image2.Position.Y:=image2.Position.Y+3;
 end;
 
 procedure TForm2.Image2MouseUp(Sender: TObject; Button: TMouseButton;
-  Shift: TShiftState; X, Y: Single);
+Shift: TShiftState; X, Y: Single);
 begin
 image2.Position.Y:=image2.Position.Y-3;
 end;
