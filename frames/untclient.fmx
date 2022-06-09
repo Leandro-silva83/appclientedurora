@@ -1,0 +1,313 @@
+object Frame1: TFrame1
+  Size.Width = 362.000000000000000000
+  Size.Height = 155.000000000000000000
+  Size.PlatformDefault = False
+  object Layout1: TLayout
+    Align = Contents
+    Size.Width = 362.000000000000000000
+    Size.Height = 155.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+    object Layout2: TLayout
+      Align = Left
+      Margins.Left = 5.000000000000000000
+      Margins.Top = 5.000000000000000000
+      Margins.Right = 5.000000000000000000
+      Margins.Bottom = 5.000000000000000000
+      Position.X = 5.000000000000000000
+      Position.Y = 5.000000000000000000
+      Size.Width = 84.000000000000000000
+      Size.Height = 145.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 0
+      object Circle1: TCircle
+        Align = Client
+        Size.Width = 84.000000000000000000
+        Size.Height = 145.000000000000000000
+        Size.PlatformDefault = False
+        Stroke.Kind = None
+      end
+      object ShadowEffect1: TShadowEffect
+        Distance = 3.000000000000000000
+        Direction = 45.000000000000000000
+        Softness = 0.300000011920929000
+        Opacity = 0.600000023841857900
+        ShadowColor = claBlack
+      end
+      object labfoto: TLabel
+        Align = Center
+        StyledSettings = [Style]
+        Size.Width = 60.000000000000000000
+        Size.Height = 52.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.Font.Family = 'Segoe Print'
+        TextSettings.Font.Size = 20.000000000000000000
+        TextSettings.FontColor = xFF411F99
+        TextSettings.HorzAlign = Center
+        Text = 'LS'
+        TabOrder = 1
+      end
+    end
+    object Layout3: TLayout
+      Align = Client
+      Size.Width = 268.000000000000000000
+      Size.Height = 155.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 1
+      object Layout4: TLayout
+        Align = Top
+        Margins.Top = 5.000000000000000000
+        Position.Y = 5.000000000000000000
+        Size.Width = 268.000000000000000000
+        Size.Height = 36.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 1
+        object labnome: TLabel
+          Align = Client
+          StyledSettings = [Style]
+          Size.Width = 268.000000000000000000
+          Size.Height = 36.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.Family = 'Segoe Print'
+          TextSettings.Font.Size = 20.000000000000000000
+          TextSettings.FontColor = xFF411F99
+          TextSettings.HorzAlign = Center
+          Text = 'LS'
+          TabOrder = 1
+        end
+      end
+      object Layout5: TLayout
+        Align = Top
+        Margins.Top = 5.000000000000000000
+        Position.Y = 46.000000000000000000
+        Size.Width = 268.000000000000000000
+        Size.Height = 36.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 0
+        object Labcel: TLabel
+          Align = Client
+          StyledSettings = [Style]
+          Size.Width = 268.000000000000000000
+          Size.Height = 36.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.Family = 'Segoe Print'
+          TextSettings.Font.Size = 20.000000000000000000
+          TextSettings.FontColor = xFF411F99
+          TextSettings.HorzAlign = Center
+          Text = 'LS'
+          TabOrder = 1
+        end
+      end
+      object Layout6: TLayout
+        Align = Client
+        Size.Width = 268.000000000000000000
+        Size.Height = 73.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 2
+        object FlowLayout1: TFlowLayout
+          Align = Client
+          Size.Width = 268.000000000000000000
+          Size.Height = 73.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 0
+          Justify = Left
+          JustifyLastLine = Left
+          FlowDirection = LeftToRight
+          object Layout7: TLayout
+            Align = Client
+            Margins.Left = 5.000000000000000000
+            Margins.Top = 3.000000000000000000
+            Margins.Bottom = 5.000000000000000000
+            Size.Width = 50.000000000000000000
+            Size.Height = 66.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 3
+          end
+          object imglist_ped: TLayout
+            Align = Client
+            Margins.Left = 5.000000000000000000
+            Margins.Top = 3.000000000000000000
+            Margins.Bottom = 5.000000000000000000
+            Size.Width = 50.000000000000000000
+            Size.Height = 66.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 1
+            object Image1: TImage
+              MultiResBitmap.Height = 32
+              MultiResBitmap.Width = 32
+              MultiResBitmap = <
+                item
+                  Width = 32
+                  Height = 32
+                  PNG = {
+                    89504E470D0A1A0A0000000D4948445200000020000000200806000000737A7A
+                    F4000000017352474200AECE1CE90000000467414D410000B18F0BFC61050000
+                    0545494441545847B5576B4C5B551CBFE7F6F6C9461C5B3130148DBD974220BE
+                    E223CA52628C46E78725668F187CA1BC469CCF292E286EBED8E68C894081B8C4
+                    0DBFACB818E397393593309D3111752C84DDD62C7CA0E84A6622A4B6947B8FBF
+                    534E0917DAF5B6C15F7272CEF9FF4FCFFFFD3FB744C880ED55553677227154A0
+                    74A7208A564E360D2A08FFE2B76FFB83C1F739292DD22A9014BEB0F039D5F587
+                    08213DD4E1D8CF59A6A1C762B248C8F77E557571525AAC528009DF94480420B8
+                    08169C0769AE37186C5FE4AE468BA2DC87B31BF956A09AA617B85CA7A294DA48
+                    3C7EA55755337A9941E4731206E192F43048738B9CCC2094366034A586288A4D
+                    F158EC3ACECE8A2505560AEF1D1FCF2A9C0131AE8F48D256A269AF51516CD775
+                    BD7D63494988B3B322A940BEC25340B2DEAD5B2C01A2EB01228A8148385CCD59
+                    594152098778AF5B989B7B64607A3ACA79C26E59EE160889208E3927616B4DCD
+                    0633394020649052BA0B9AFBA1C49270601D84D78B94FABA83C1DF39CD34CC2A
+                    20B23A87EB7B5608876A24025A5D3EC27301D9AD2894DAED45FEB1B1BF396D4D
+                    B0D2032F969539632E57072A653BB6BFA1B73433991263A6D0E2F1DC4A2C160F
+                    DFE605F481505F28F46B7151D1ECE570B88BD15ABDDEDBE3BA7E1C9A84754178
+                    0673A3108F9F00EB418307B0EE04B196FD285FA0058FA0FB1D60EB4E9F4F4245
+                    B45342F6229C1D28D96E76E4C9F2724781DDFE0B94E9FDDF42D05C59295B34ED
+                    38DA7935F2E9148433D72FA14596B7A0557F6608012AE2654C772DEE4C829049
+                    C4792FDF3130A35AF444E23078C7AC9AB62D2149A308EFA308CD497E46B088A2
+                    0B4D8B1A14804B7E467C66F9D614445D0FF3A5D05651518A4B8F0ABA7E235AF2
+                    49587FF3F4A54B33C515150D3AA5838D5EEF8FA513137F456028F61DE8824FAD
+                    590870CF0EC4B907CB136868AF0AA5A509CBECEC4F3068081EEA82777B901F15
+                    28791BE6F568DB8FF74D4C5C3026A12C07E03643AC5641D7AFB8376FBE76FFF0
+                    F002DB3E5F5E7E4DC26E67827DB0B8C11F0A9D667486668FA70A9E3887D2F361
+                    5B8BBB3FC27C086FC75B43E3E3F3EC8CE1358C58ADF54C99AB0DA7CB757D4A78
+                    AB2CDF3F6FB78FC122025ECD72E10CFDA1D038BC7208EE3E8B4A7801C27CF0C6
+                    BE947086BC42C09A4ADCE53A088B1FC3D7521BCA8ED5F42AB42ACA3684A01F0A
+                    7E4924E9A5748F9CC10366804BEF88399DA3B8D48B0CBE259DF0E73C9E4218D6
+                    8F651F4613CE34657A610D1E48663121259C27E08DD7DCC1E0793C85281064B9
+                    A23C0BC11F60ECC3A57E90B034A2D5E3F1C1EA4FE19951C4A979405567382B2D
+                    0C1E40097524DF743E400AFC59597913E3B578BDD5D0E2080E6982A67D059241
+                    38ACB6C398C3C8F22F10EF4E7749C94E89D257383B234CE5006BA997A7A6CEC1
+                    AA216C8B61E19D6E55AD4B79862907850791ED510BA54F7C1C0AFD61FE395E86
+                    3659DE85526435DB850CAFE464018FCA9BB865FD8CAA1E89C6E31DC8EC0D338A
+                    B207F56A8101ED10FE038E0D225C5B98F0C55F9943D624644907B7EE410D176F
+                    F2786A8F4D4EC6F0F1F2B4A6EBEFB815E52C8EEC40AEDC839CF830E5915C902D
+                    04040A8CC17AF607A50CB165DDEE02F6F742A17FF025F5C98CD5FADEF2BA660A
+                    DBE2F1E07C612131F74966EC847E5CFC00E7B1AC1411F71BB08A21E3A6308F20
+                    CEC388F34826574381D3F0D800B5D9BECB598195659802BE0BA77B2E5E5C7A74
+                    AE06DCF70D3C3520D86CDFE6AC00A7E50CE6764CEF421281D76E83028D82C371
+                    26E72AC8172CE649B763200B9B5C4EE7D79C95152CC9A2782CEA448723C8696B
+                    02F6E7D442C81978A08093D282A0DE5F47E2BD013F39396DAD1085370EF4A9EA
+                    41BE4F0341F80F8874CB4B081581AA0000000049454E44AE426082}
+                  FileName = 
+                    'C:\Users\Bete\Documents\Embarcadero\Studio\Projects\appclientedu' +
+                    'rora\images\copy-writing.png'
+                end>
+              Align = Client
+              Locked = True
+              Size.Width = 50.000000000000000000
+              Size.Height = 66.000000000000000000
+              Size.PlatformDefault = False
+              object Layout10: TLayout
+                Align = Top
+                Margins.Left = 32.000000000000000000
+                Margins.Right = -23.000000000000000000
+                Position.X = 32.000000000000000000
+                Size.Width = 41.000000000000000000
+                Size.Height = 25.000000000000000000
+                Size.PlatformDefault = False
+                TabOrder = 0
+                object Circle2: TCircle
+                  Align = Contents
+                  Size.Width = 41.000000000000000000
+                  Size.Height = 25.000000000000000000
+                  Size.PlatformDefault = False
+                  Stroke.Color = xFF0636B3
+                  object labdetped: TLabel
+                    Align = Client
+                    StyledSettings = [Family, Size, Style]
+                    Size.Width = 41.000000000000000000
+                    Size.Height = 25.000000000000000000
+                    Size.PlatformDefault = False
+                    TextSettings.FontColor = xFFE50B0B
+                    TextSettings.HorzAlign = Center
+                    Text = '1'
+                    TabOrder = 0
+                  end
+                end
+              end
+            end
+          end
+          object Layout8: TLayout
+            Align = Client
+            Margins.Left = 5.000000000000000000
+            Margins.Top = 3.000000000000000000
+            Margins.Bottom = 5.000000000000000000
+            Size.Width = 38.000000000000000000
+            Size.Height = 66.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 0
+          end
+          object Layout11: TLayout
+            Align = Client
+            Margins.Left = 5.000000000000000000
+            Margins.Top = 3.000000000000000000
+            Margins.Bottom = 5.000000000000000000
+            Size.Width = 50.000000000000000000
+            Size.Height = 66.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 2
+            object imgaddped: TImage
+              MultiResBitmap.Height = 32
+              MultiResBitmap.Width = 32
+              MultiResBitmap = <
+                item
+                  Width = 32
+                  Height = 32
+                  PNG = {
+                    89504E470D0A1A0A0000000D4948445200000020000000200806000000737A7A
+                    F4000000017352474200AECE1CE90000000467414D410000B18F0BFC61050000
+                    048D494441545847C5575D685447149E997B77C32A890DA8A949A9D664774149
+                    8AC622092D29B4F8621F04897D2ED8845D115302D22856858AD0526D95246D1E
+                    6A1FFA20B10DD287B60FA9568B340F46F007757723543044535B63FC59B27B77
+                    A6DF993B376DBA9BACC95DDA0FEE9DB9E7DC99F3CD3967CE9DCB19B0A3B6B649
+                    59D66129E50621C462922D08528E31217E7418DBDD974CDE37D239C163D16833
+                    57EA3CFA962B2A096E943D7DDA78F4CE9DB4799E153C1E89FC8CB68529752414
+                    0A7DF0C9952B4F5CD5FCD11E8DAEB2941A40779D62ACB337993CE26A668720B7
+                    53C7AF71C21789C46F58C831FDA0D47ADD160142EEC6DCAF710F4A083D0F922B
+                    A80545402180B718EB49267542C6C3E14E341BA9FF6F28CE878AB91539D58A9C
+                    EA87074EF5A452DB8C785608D3FE0DA5F630CE5B0B5D98B8CBBC5532E411C02A
+                    5FC5B5ADD025387FCDBC5632E485C02FFC87E03F469E07DAEBEAD608CB5A4BFD
+                    678694B9602673E6B3DBB7277C7B00E5F0179A605E17E7DF6683C1C3341EABD0
+                    0BC24DB7C5909F84421C22F6F3B960E92412F46B1A9FE5FC029EBF875C3F1705
+                    85C00BC3FF8192EF0242DBEAD52FDA96B50AB5A392E772E369DBBEF66522F1C8
+                    A867A06404F6B7B4D8E3A3A3DB31490C05BEC1883560600AF2419039D47DEBD6
+                    AF46AC51A8145F00F366EA17025E9E407C9B7B53A91B46A4BF8242A9D398E065
+                    2D90F24F90B8AA949A4082AE5052AEE742D85AA7548F5351D1D1373C9CA5C7FC
+                    24C470D32D0864BD26ECC1181FD2C6954A41BD75594D4D1516F43A486E41BB31
+                    130C56417E1003D3585CDC9E9CECDF6F6CFB0A8176FBD8D845B3F2414BCAADC7
+                    4746264917ABAFAF545353EB3E4F26CFE251DBD8118D6E80377E0089A520BB0F
+                    75E2435F95D0C45CAFFC9FC635D2E98F30F94FB170F80D2361DD89C445C9F9DB
+                    E82A90E802A16A5F048038DDB0BCF767180710FB25BA2344A56E0DE0913308C7
+                    297417E130F4CE8209D0564362D553C22DAFAEFECE889F09F8B27EA53B9C6F76
+                    337301B002815AB89E26B97CF0DC3967D7CA95CF6502818FA757CE5813DDB894
+                    EF6167B5521F86DD038DE30C33DBA6B25DBB600FC074B9E9EA02335556465B6D
+                    3B0879079817B496F3264F861DA40F3401211E528B3996D0A1549FE13A1B1AE6
+                    F53F8081F74C7705DD28DBB1DA4DD30718C674C141D21DF564DE8106DF9B6A6A
+                    E1C1BBB40DF5B11C89F1290F04F6F55CBFFE582B8B60675D5D8523C43872C012
+                    B6FD7CF7CD9B7F189506DCDE4FAB26C3BD890425DD34A07B17BA3E10386DA33C
+                    7681E579B8AF03B1E90021F3DAAC18CFE1C87D3C951AC5BB83C8F2CD3297DB09
+                    F901573D37900C1648EDD24587F30141B519EE22D70C815186E47301EF2A5B08
+                    34188FDAAE459CEF8E4522AF90CC038CD07CF7E1A16B46A4B134123900E36BA1
+                    4B39E5E52735113F803BBB41204EC6A8C8D03E37AA19A0951BE37B510D73CCB2
+                    362134677D13686B6C0C506D07892D785420F20D889C0866B397C642A107558E
+                    5323957A13FA0EE8D7C038FE5D595BEFC8C8091AEF9B00813E2CBF87C3F43F41
+                    DB6C912B2D00FA5809D14E2B3792D210F040B59DCA2B8AD15B489297B0EF2B41
+                    EA2E0C5F423B4031F73EC32E18FB0B0E245610338D0B3C0000000049454E44AE
+                    426082}
+                  FileName = 
+                    'C:\Users\Bete\Documents\Embarcadero\Studio\Projects\appclientedu' +
+                    'rora\images\add.png'
+                end>
+              Align = Client
+              Size.Width = 50.000000000000000000
+              Size.Height = 66.000000000000000000
+              Size.PlatformDefault = False
+            end
+          end
+        end
+      end
+    end
+  end
+  object StyleBook1: TStyleBook
+    Styles = <>
+    Left = 134
+    Top = 29
+  end
+end
