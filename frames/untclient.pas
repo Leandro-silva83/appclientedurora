@@ -33,6 +33,8 @@ type
     imgaddped: TImage;
     Rectangle1: TRectangle;
     Layout9: TLayout;
+    Image2: TImage;
+
   private
     { Private declarations }
   public
@@ -42,5 +44,7 @@ type
 implementation
 
 {$R *.fmx}
+
+
 
 end.
