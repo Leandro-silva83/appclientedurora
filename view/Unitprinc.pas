@@ -12,7 +12,8 @@ uses
   FireDAC.FMXUI.Wait, FireDAC.Stan.Param, FireDAC.DatS, FireDAC.DApt.Intf,
   FireDAC.DApt, Data.DB, FireDAC.Comp.DataSet, FireDAC.Comp.Client,
   FireDAC.Comp.UI, FireDAC.Phys.SQLite, FireDAC.Phys.SQLiteDef,
-  FireDAC.Stan.ExprFuncs, FireDAC.Phys.SQLiteWrapper.Stat, untclient, Skia.FMX;
+  FireDAC.Stan.ExprFuncs, FireDAC.Phys.SQLiteWrapper.Stat, untclient, Skia.FMX,
+  FMX.WebBrowser, FMX.Media;
 
 type
   TForm2 = class(TForm)
@@ -64,19 +65,35 @@ type
     Layout16: TLayout;
     VertScrollBox1: TVertScrollBox;
     SkLabel1: TSkLabel;
-    B: TLayout;
     Label4: TLabel;
-    Edit1: TEdit;
+    edtcod: TEdit;
     Rectangle4: TRectangle;
-    Label5: TLabel;
     Rectangle5: TRectangle;
-    Edit2: TEdit;
-    Layout17: TLayout;
-    Image3: TImage;
+    edtdescricao: TEdit;
+    Label6: TLabel;
+    tbipedclient: TTabItem;
     Layout18: TLayout;
     Layout19: TLayout;
-    Label6: TLabel;
-    labdesc: TLabel;
+    Layout20: TLayout;
+    Label5: TLabel;
+    Rectangle6: TRectangle;
+    edtquant: TEdit;
+    Layout21: TLayout;
+    Image3: TImage;
+    Layout22: TLayout;
+    Circle1: TCircle;
+    Labcountprod: TLabel;
+    Layout23: TLayout;
+    Layout17: TLayout;
+    Image4: TImage;
+    Image5: TImage;
+    MediaPlayer1: TMediaPlayer;
+    PathAnimation1: TPathAnimation;
+    FloatAnimation1: TFloatAnimation;
+    Layout24: TLayout;
+    Label7: TLabel;
+    Labcart_name: TLabel;
+    VertScrollBox2: TVertScrollBox;
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure FormShow(Sender: TObject);
     procedure Image2Click(Sender: TObject);
@@ -95,12 +112,23 @@ type
       Shift: TShiftState; X, Y: Single);
     procedure SpeedButton1MouseUp(Sender: TObject; Button: TMouseButton;
       Shift: TShiftState; X, Y: Single);
+    procedure Image4MouseDown(Sender: TObject; Button: TMouseButton;
+      Shift: TShiftState; X, Y: Single);
+    procedure Image4MouseUp(Sender: TObject; Button: TMouseButton;
+      Shift: TShiftState; X, Y: Single);
+    procedure Image4Click(Sender: TObject);
+    procedure edtcodTyping(Sender: TObject);
+    procedure FloatAnimation1Finish(Sender: TObject);
   private
     procedure readlist;
     function format_caracter(v: string): string;
     procedure newped(sender: TObject);
+    procedure findprod(val:string);
+    procedure onanimateint(sender: TObject);
    var  cardframe:TFrame1;
-  { Private declarations }
+  var countped:integer;
+var saveproddatabase:boolean;
+ { Private declarations }
   public
     { Public declarations }
   end;
@@ -138,6 +166,8 @@ end;
 procedure TForm2.FormShow(Sender: TObject);
 var cardframe:TFrame1;
 begin
+countped:=0;
+saveproddatabase:=true;
 TabControl1.TabPosition:=TTabPosition.None;
 TabControl1.ActiveTab:=tablist_client;
 readlist;
@@ -152,6 +182,57 @@ str := str + v.Substring(1, 1);
 result := str;
 end;
 
+procedure TForm2.edtcodTyping(Sender: TObject);
+begin
+ if edtcod.Text.Length>3 then
+  findprod(edtcod.Text)
+end;
+
+procedure TForm2.findprod(val:string);
+var tr:TThread;
+begin
+tr:=TThread.CreateAnonymousThread(procedure
+   begin
+    FDConnection1.Connected:=true;
+    FDQuery1.SQL.Clear;
+    FDQuery1.SQL.Add('select * from produto where codeudora='+QuotedStr(edtcod.Text));
+    FDQuery1.Open;
+if FDQuery1.RecordCount=0 then
+    saveproddatabase:=true
+   else
+     begin
+    saveproddatabase:=false;
+ TThread.Synchronize(TThread.CurrentThread,procedure
+       begin
+      edtcod.Text:=FDQuery1.FieldByName('codeudora').AsString;
+      edtdescricao.Text:=FDQuery1.FieldByName('descricao').AsString;
+      edtquant.SetFocus;
+       end);
+
+     end;
+
+   end);
+ tr.FreeOnTerminate:=true;
+tr.Start;
+end;
+
+procedure TForm2.FloatAnimation1Finish(Sender: TObject);
+begin
+  image5.Opacity:=0.01;
+  Image5.Visible:=true;
+  image5.Repaint;
+  TAnimator.AnimateFloatWait(Image5,'Opacity',1,1.7);
+  image5.parent:=nil;
+  Labcountprod.Text:=countped.ToString;
+  Layout22.Visible:=true;
+  image4.Visible:=true;
+end;
+
+procedure TForm2.onanimateint(sender:TObject);
+begin
+ FloatAnimation1.Inverse:=true;
+ FloatAnimation1.start;
+end;
 
 procedure TForm2.readlist;
 begin
@@ -244,6 +325,52 @@ procedure TForm2.Image2MouseUp(Sender: TObject; Button: TMouseButton;
 Shift: TShiftState; X, Y: Single);
 begin
 image2.Position.Y:=image2.Position.Y-3;
+end;
+
+procedure TForm2.Image4Click(Sender: TObject);
+var td:TThread;
+begin
+td:=TThread.CreateAnonymousThread(procedure
+    begin
+      if saveproddatabase then
+        begin
+           FDConnection1.Connected:=true;
+           FDQuery1.SQL.Clear;
+           FDQuery1.SQL.Add('insert into produto(id,codeudora,descricao) values (Hex(randomblob(2)),'+
+           QuotedStr(edtcod.Text)+','+QuotedStr(edtdescricao.Text)+')');
+           FDQuery1.ExecSQL;
+          inc(countped,1);
+        end;
+      TThread.Synchronize(TThread.CurrentThread,procedure
+        begin
+           edtcod.Text:='';
+           edtquant.Text:='';
+           edtdescricao.Text:='';
+           edtcod.SetFocus;
+           inc(countped,1);
+           Application.ProcessMessages;
+        end);
+
+    end);
+td.FreeOnTerminate:=true;
+td.OnTerminate:=onanimateint;
+td.Start;
+
+
+
+
+end;
+
+procedure TForm2.Image4MouseDown(Sender: TObject; Button: TMouseButton;
+  Shift: TShiftState; X, Y: Single);
+begin
+image4.Position.Y:=image4.Position.Y+3;
+end;
+
+procedure TForm2.Image4MouseUp(Sender: TObject; Button: TMouseButton;
+  Shift: TShiftState; X, Y: Single);
+begin
+image4.Position.Y:=image4.Position.Y-3;
 end;
 
 end.
