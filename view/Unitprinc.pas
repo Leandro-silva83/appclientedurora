@@ -3,374 +3,679 @@
 interface
 
 uses
-  System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
-  FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs, FMX.Layouts,
-  FMX.ListBox, FMX.StdCtrls,Fmx.Ani, FMX.Objects, FMX.Edit, FMX.TabControl, FMX.Effects,
-  FMX.Controls.Presentation, FMX.Filter.Effects, FireDAC.Stan.Intf,
-  FireDAC.Stan.Option, FireDAC.Stan.Error, FireDAC.UI.Intf, FireDAC.Phys.Intf,
-  FireDAC.Stan.Def, FireDAC.Stan.Pool, FireDAC.Stan.Async, FireDAC.Phys,
-  FireDAC.FMXUI.Wait, FireDAC.Stan.Param, FireDAC.DatS, FireDAC.DApt.Intf,
-  FireDAC.DApt, Data.DB, FireDAC.Comp.DataSet, FireDAC.Comp.Client,
-  FireDAC.Comp.UI, FireDAC.Phys.SQLite, FireDAC.Phys.SQLiteDef,
-  FireDAC.Stan.ExprFuncs, FireDAC.Phys.SQLiteWrapper.Stat, untclient, Skia.FMX,
-  FMX.WebBrowser, FMX.Media;
+  System.SysUtils,
+  System.Types,
+  System.UITypes,
+  System.Classes,
+  System.Variants,
+  FMX.Types,
+  FMX.Controls,
+  FMX.Forms,
+  FMX.Graphics,
+  FMX.Dialogs,
+  FMX.Layouts,
+  FMX.ListBox,
+  FMX.StdCtrls,
+  FMX.Ani,
+  FMX.Objects,
+  FMX.Edit,
+  FMX.TabControl,
+  FMX.Effects,
+  FMX.Controls.Presentation,
+  FMX.Filter.Effects,
+  FireDAC.Stan.Intf,
+  FireDAC.Stan.Option,
+  FireDAC.Stan.Error,
+  FireDAC.UI.Intf,
+  FireDAC.Phys.Intf,
+  FireDAC.Stan.Def,
+  FireDAC.Stan.Pool,
+  FireDAC.Stan.Async,
+  FireDAC.Phys,
+  FireDAC.FMXUI.Wait,
+  FireDAC.Stan.Param,
+  FireDAC.DatS,
+  FireDAC.DApt.Intf,
+  FireDAC.DApt,
+  Data.DB,
+  FireDAC.Comp.DataSet,
+  FireDAC.Comp.Client,
+  FireDAC.Comp.UI,
+  FireDAC.Phys.SQLite,
+  FireDAC.Phys.SQLiteDef,
+  FireDAC.Stan.ExprFuncs,
+  FireDAC.Phys.SQLiteWrapper.Stat,
+  untclient,
+  Skia.FMX,
+  FMX.WebBrowser,
+  FMX.Media,
+  IdBaseComponent,
+  IdComponent,
+  IdTCPConnection,
+  IdTCPClient,
+  IdHTTP,
+  FMX.Memo.Types,
+  FMX.ScrollBox,
+  FMX.Memo,
+  REST.Types,
+  REST.Client,
+  Data.Bind.Components,
+  Data.Bind.ObjectScope,
+  untcard_prod,
+  System.Generics.Collections, untcardpedido;
 
 type
-  TForm2 = class(TForm)
-    Layout1: TLayout;
-    Layout2: TLayout;
-    Label1: TLabel;
-    ShadowEffect1: TShadowEffect;
-    Layout3: TLayout;
-    FlowLayout1: TFlowLayout;
-    Layout4: TLayout;
-    Layout5: TLayout;
-    Image2: TImage;
-    TabControl1: TTabControl;
-    TabItem1: TTabItem;
-    Layout6: TLayout;
-    Layout7: TLayout;
-    Label2: TLabel;
-    lay_name: TLayout;
-    Rectangle7: TRectangle;
-    edtname: TEdit;
-    Line1: TLine;
-    Layout8: TLayout;
-    Rectangle3: TRectangle;
-    edtcel: TEdit;
-    Line2: TLine;
-    Layout9: TLayout;
-    Button1: TButton;
-    tablist_client: TTabItem;
-    Layout10: TLayout;
-    Label3: TLabel;
-    ListBox1: TListBox;
-    Rectangle1: TRectangle;
-    Rectangle2: TRectangle;
-    StyleBook1: TStyleBook;
-    FillRGBEffect1: TFillRGBEffect;
-    Layout11: TLayout;
-    Layout12: TLayout;
-    Image1: TImage;
-    FillRGBEffect2: TFillRGBEffect;
-    FDConnection1: TFDConnection;
-    FDGUIxWaitCursor1: TFDGUIxWaitCursor;
-    FDQuery1: TFDQuery;
-    FDPhysSQLiteDriverLink1: TFDPhysSQLiteDriverLink;
-    Layout13: TLayout;
-    SpeedButton1: TSpeedButton;
-    Layout14: TLayout;
-    tbinewped: TTabItem;
-    Layout15: TLayout;
-    Layout16: TLayout;
-    VertScrollBox1: TVertScrollBox;
-    SkLabel1: TSkLabel;
-    Label4: TLabel;
-    edtcod: TEdit;
-    Rectangle4: TRectangle;
-    Rectangle5: TRectangle;
-    edtdescricao: TEdit;
-    Label6: TLabel;
-    tbipedclient: TTabItem;
-    Layout18: TLayout;
-    Layout19: TLayout;
-    Layout20: TLayout;
+  TForm2= class(TForm)
+    Layout1:TLayout;
+    Layout2:TLayout;
+    Label1:TLabel;
+    ShadowEffect1:TShadowEffect;
+    Layout3:TLayout;
+    FlowLayout1:TFlowLayout;
+    Layout4:TLayout;
+    Layout5:TLayout;
+    Image2:TImage;
+    TabControl1:TTabControl;
+    TabItem1:TTabItem;
+    Layout6:TLayout;
+    Layout7:TLayout;
+    Label2:TLabel;
+    lay_name:TLayout;
+    Rectangle7:TRectangle;
+    edtname:TEdit;
+    Line1:TLine;
+    Layout8:TLayout;
+    Rectangle3:TRectangle;
+    edtcel:TEdit;
+    Line2:TLine;
+    Layout9:TLayout;
+    tablist_client:TTabItem;
+    Layout10:TLayout;
+    Label3:TLabel;
+    ListBox1:TListBox;
+    Rectangle1:TRectangle;
+    Rectangle2:TRectangle;
+    StyleBook1:TStyleBook;
+    FillRGBEffect1:TFillRGBEffect;
+    Layout11:TLayout;
+    Layout12:TLayout;
+    Image1:TImage;
+    FillRGBEffect2:TFillRGBEffect;
+    FDConnection1:TFDConnection;
+    FDGUIxWaitCursor1:TFDGUIxWaitCursor;
+    FDQuery1:TFDQuery;
+    FDPhysSQLiteDriverLink1:TFDPhysSQLiteDriverLink;
+    Layout13:TLayout;
+    SpeedButton1:TSpeedButton;
+    Layout14:TLayout;
+    tbinewped:TTabItem;
+    Layout15:TLayout;
+    Layout16:TLayout;
+    VertScrollBox1:TVertScrollBox;
+    SkLabel1:TSkLabel;
+    Label4:TLabel;
+    edtcod:TEdit;
+    Rectangle4:TRectangle;
+    Rectangle5:TRectangle;
+    edtdescricao:TEdit;
+    Label6:TLabel;
+    tbipedclient:TTabItem;
+    Layout18:TLayout;
+    Layout19:TLayout;
+    Layout20:TLayout;
+    Layout21:TLayout;
+    Image3:TImage;
+    Layout22:TLayout;
+    Circle1:TCircle;
+    Labcountprod:TLabel;
+    Layout23:TLayout;
+    Layout17:TLayout;
+    Image4:TImage;
+    Image5:TImage;
+    MediaPlayer1:TMediaPlayer;
+    PathAnimation1:TPathAnimation;
+    FloatAnimation1:TFloatAnimation;
+    Layout24:TLayout;
+    Label7:TLabel;
+    Labcart_name:TLabel;
+    VertScrollBox2:TVertScrollBox;
+    Layout25: TLayout;
+    Label8: TLabel;
+    Rectangle8: TRectangle;
+    Edit1: TEdit;
+    Layout27: TLayout;
+    Layout26: TLayout;
     Label5: TLabel;
     Rectangle6: TRectangle;
     edtquant: TEdit;
-    Layout21: TLayout;
-    Image3: TImage;
-    Layout22: TLayout;
-    Circle1: TCircle;
-    Labcountprod: TLabel;
-    Layout23: TLayout;
-    Layout17: TLayout;
-    Image4: TImage;
-    Image5: TImage;
-    MediaPlayer1: TMediaPlayer;
-    PathAnimation1: TPathAnimation;
-    FloatAnimation1: TFloatAnimation;
-    Layout24: TLayout;
-    Label7: TLabel;
-    Labcart_name: TLabel;
-    VertScrollBox2: TVertScrollBox;
-    procedure FormClose(Sender: TObject; var Action: TCloseAction);
-    procedure FormShow(Sender: TObject);
-    procedure Image2Click(Sender: TObject);
-    procedure Image2MouseDown(Sender: TObject; Button: TMouseButton;
-      Shift: TShiftState; X, Y: Single);
-    procedure Image2MouseUp(Sender: TObject; Button: TMouseButton;
-      Shift: TShiftState; X, Y: Single);
-    procedure Image1Click(Sender: TObject);
-    procedure Image1MouseDown(Sender: TObject; Button: TMouseButton;
-      Shift: TShiftState; X, Y: Single);
-    procedure Image1MouseUp(Sender: TObject; Button: TMouseButton;
-      Shift: TShiftState; X, Y: Single);
-    procedure Button1Click(Sender: TObject);
-    procedure SpeedButton1Click(Sender: TObject);
-    procedure SpeedButton1MouseDown(Sender: TObject; Button: TMouseButton;
-      Shift: TShiftState; X, Y: Single);
-    procedure SpeedButton1MouseUp(Sender: TObject; Button: TMouseButton;
-      Shift: TShiftState; X, Y: Single);
-    procedure Image4MouseDown(Sender: TObject; Button: TMouseButton;
-      Shift: TShiftState; X, Y: Single);
-    procedure Image4MouseUp(Sender: TObject; Button: TMouseButton;
-      Shift: TShiftState; X, Y: Single);
-    procedure Image4Click(Sender: TObject);
-    procedure edtcodTyping(Sender: TObject);
-    procedure FloatAnimation1Finish(Sender: TObject);
-  private
-    procedure readlist;
-    function format_caracter(v: string): string;
-    procedure newped(sender: TObject);
-    procedure findprod(val:string);
-    procedure onanimateint(sender: TObject);
-   var  cardframe:TFrame1;
-  var countped:integer;
-var saveproddatabase:boolean;
+    Button2: TButton;
+    Layout28: TLayout;
+    txtsaldo: TText;
+    Button1: TButton;
+    tbilistpedclient: TTabItem;
+    Layout29: TLayout;
+    SkLabel2: TSkLabel;
+    ListBox2: TListBox;
+    procedure FormClose(Sender:TObject;var Action:TCloseAction);
+    procedure FormShow(Sender:TObject);
+    procedure Image2Click(Sender:TObject);
+    procedure Image2MouseDown(Sender:TObject;Button:TMouseButton;
+     Shift:TShiftState;X,Y:Single);
+    procedure Image2MouseUp(Sender:TObject;Button:TMouseButton;
+     Shift:TShiftState;X,Y:Single);
+    procedure Image1Click(Sender:TObject);
+    procedure Image1MouseDown(Sender:TObject;Button:TMouseButton;
+     Shift:TShiftState;X,Y:Single);
+    procedure Image1MouseUp(Sender:TObject;Button:TMouseButton;
+     Shift:TShiftState;X,Y:Single);
+    procedure Button1Click(Sender:TObject);
+    procedure SpeedButton1Click(Sender:TObject);
+    procedure SpeedButton1MouseDown(Sender:TObject;Button:TMouseButton;
+     Shift:TShiftState;X,Y:Single);
+    procedure SpeedButton1MouseUp(Sender:TObject;Button:TMouseButton;
+     Shift:TShiftState;X,Y:Single);
+    procedure Image4MouseDown(Sender:TObject;Button:TMouseButton;
+     Shift:TShiftState;X,Y:Single);
+    procedure Image4MouseUp(Sender:TObject;Button:TMouseButton;
+     Shift:TShiftState;X,Y:Single);
+    procedure Image4Click(Sender:TObject);
+    procedure edtcodTyping(Sender:TObject);
+    procedure FloatAnimation1Finish(Sender:TObject);
+    procedure Image3Click(Sender:TObject);
+    procedure Button2Click(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
+    procedure edtcelTyping(Sender: TObject);
+    private
+      procedure readlist;
+      function format_caracter(v:string):string;
+      procedure newped(Sender:TObject);
+      procedure findprod(val:string);
+      procedure onanimateint(Sender:TObject);
+      procedure montcart;
+      function create_cardprod(cod,desc,quant,valor:string): TFrame2;
+    procedure nexttabproc(sender: TObject);
+    procedure totpedclient(clieid: string);
+    procedure settotalpedidosclients(sender: TObject);
+    procedure endthreadinsertclient(sender:TObject);
+    procedure reloadlist(ind: integer);
+    procedure loadinglistped(Sender: TObject);
+    var
+      cardframe:TFrame1;
+    var
+     totalpedidosclientes,countped,countcard:integer;
+    var
+      saveproddatabase:boolean;
+    var
+      idprod,nomeclient:string;
+    var
+      calculoped:double;
+    var
+      listcardprod:TObjectList<TFrame2>;
+    var
+      listframecliente:TObjectList<TFrame1>;
+    var
+      listframepedido:TObjectList<TFrame3>;
+    var
+      listids:TStringList;
+    var
+      qry:TFDQuery;
  { Private declarations }
-  public
+    public
     { Public declarations }
   end;
 
 var
-  Form2: TForm2;
+   Form2:TForm2;
 
 implementation
 
 {$R *.fmx}
 
+uses uFormat
+    {$IFDEF ANDROID}
+     ,FMX.Platform.android;
+    {$ENDIF}
+  {$IFDEF MSWINDOWS}
+    ;
+  {$ENDIF}
 
-
-procedure TForm2.Button1Click(Sender: TObject);
+procedure TForm2.Button1Click(Sender:TObject);
+var tr:TThread;
 begin
-FDConnection1.Connected:=true;
-try
-FDQuery1.SQL.Add('insert into clientes(id,nomepessoa,cel,pedidos) values (hex(randomblob(2)),'+QuotedStr(edtname.Text)+','+
-QuotedStr(edtcel.Text)+','+inttostr(0)+')');
-FDQuery1.ExecSQL;
-except on E: Exception do
+   FDConnection1.Connected:=true;
+ tr:=TThread.CreateAnonymousThread(procedure
   begin
-    ShowMessage(e.Message);
-  end;
-end;
-FDConnection1.Connected:=false;
+    FDQuery1.SQL.Clear;
+    FDQuery1.SQL.Add
+     ('Insert Into clientes(id,nomepessoa,cel) values (hex(randomblob(2)),'
+     +QuotedStr(edtname.Text)+','+QuotedStr(edtcel.Text)+')');
+     FDQuery1.ExecSQL;
+   end);
+tr.FreeOnTerminate:=true;
+tr.OnTerminate:=endthreadinsertclient;
+tr.Start;
 end;
 
-procedure TForm2.FormClose(Sender: TObject; var Action: TCloseAction);
+procedure TForm2.endthreadinsertclient(sender:TObject);
 begin
-action:=TCloseAction.caFree;
-form2:=nil;
+  if Assigned(TThread(sender).FatalException) then
+ begin
+   showmessage(EXception(TThread(sender).FatalException).Message);
+   FDConnection1.Connected:=false;
+ end
+  else
+    begin
+      FDConnection1.Connected:=false;
+      reloadlist(1);
+    end;
+
 end;
 
-procedure TForm2.FormShow(Sender: TObject);
-var cardframe:TFrame1;
+procedure TForm2.FormClose(Sender:TObject;var Action:TCloseAction);
 begin
-countped:=0;
-saveproddatabase:=true;
-TabControl1.TabPosition:=TTabPosition.None;
-TabControl1.ActiveTab:=tablist_client;
-readlist;
+{$IFDEF MSWINDOWS}
+if Assigned(listcardprod) then
+       listcardprod.DisposeOf;
+if Assigned(listids) then
+      listids.DisposeOf;
+if Assigned(listframecliente) then
+      listframecliente.DisposeOf;
+if Assigned(qry) then
+      qry.DisposeOf;
+
+   Action:=TCloseAction.caFree;
+  Form2:=nil;
+{$ENDIF}
 end;
 
-function TForm2.format_caracter(v: string): string;
+procedure TForm2.FormCreate(Sender: TObject);
+begin
+ listframecliente:=TObjectList<TFrame1>.create;
+ qry:=TFDQuery.Create(nil);
+end;
+
+procedure TForm2.FormShow(Sender:TObject);
+begin
+  countped:=0;
+  countcard:=0;
+  Layout27.Visible:=false;
+  saveproddatabase:=true;
+  TabControl1.TabPosition:=TTabPosition.None;
+  TabControl1.ActiveTab:=tablist_client;
+  readlist;
+end;
+
+function TForm2.format_caracter(v:string):string;
 var
-  str: string;
+   str:string;
 begin
-str := v.Substring(0, 1);
-str := str + v.Substring(1, 1);
-result := str;
+   str:=v.Substring(0,1);
+  str:=str+ v.Substring(1,1);
+  result:=str;
 end;
 
-procedure TForm2.edtcodTyping(Sender: TObject);
+procedure TForm2.edtcelTyping(Sender: TObject);
 begin
- if edtcod.Text.Length>3 then
-  findprod(edtcod.Text)
+Formatar(edtcel,TFormato.celular);
+end;
+
+procedure TForm2.edtcodTyping(Sender:TObject);
+begin
+  if edtcod.Text.Length> 3 then
+     findprod(edtcod.Text)
 end;
 
 procedure TForm2.findprod(val:string);
 var tr:TThread;
+str:string;
 begin
-tr:=TThread.CreateAnonymousThread(procedure
-   begin
-    FDConnection1.Connected:=true;
-    FDQuery1.SQL.Clear;
-    FDQuery1.SQL.Add('select * from produto where codeudora='+QuotedStr(edtcod.Text));
-    FDQuery1.Open;
-if FDQuery1.RecordCount=0 then
-    saveproddatabase:=true
-   else
-     begin
-    saveproddatabase:=false;
- TThread.Synchronize(TThread.CurrentThread,procedure
-       begin
-      edtcod.Text:=FDQuery1.FieldByName('codeudora').AsString;
-      edtdescricao.Text:=FDQuery1.FieldByName('descricao').AsString;
-      edtquant.SetFocus;
-       end);
+   tr:=TThread.CreateAnonymousThread(procedure
+    begin
+      FDConnection1.Connected:=true;
+      FDQuery1.SQL.Clear;
+      FDQuery1.SQL.Add('select * from produto where codeudora='+
+       QuotedStr(edtcod.Text));
+      FDQuery1.Open;
+      if FDQuery1.RecordCount=0 then
+         saveproddatabase:=true
+      else
+      begin
+        saveproddatabase:=false;
+        TThread.Synchronize(TThread.CurrentThread, procedure
+          begin
+            edtcod.Text:=FDQuery1.FieldByName('codeudora').AsString;
+            edtdescricao.Text:=FDQuery1.FieldByName('descricao').AsString;
+            edit1.Text:=FDQuery1.FieldByName('valor').AsString;
+            idprod:=FDQuery1.FieldByName('id').AsString;
+            edtquant.SetFocus;
+          end);
 
-     end;
+      end;
 
-   end);
- tr.FreeOnTerminate:=true;
-tr.Start;
+    end);
+
+  tr.FreeOnTerminate:=true;
+  tr.Start;
+
 end;
 
-procedure TForm2.FloatAnimation1Finish(Sender: TObject);
+procedure TForm2.FloatAnimation1Finish(Sender:TObject);
 begin
-  image5.Opacity:=0.01;
+   Image5.Opacity:=0.01;
   Image5.Visible:=true;
-  image5.Repaint;
+  Image5.Repaint;
   TAnimator.AnimateFloatWait(Image5,'Opacity',1,1.7);
-  image5.parent:=nil;
+  Image5.parent:=nil;
   Labcountprod.Text:=countped.ToString;
+  Labcountprod.Repaint;
   Layout22.Visible:=true;
-  image4.Visible:=true;
+  Image4.Visible:=true;
+  TAnimator.AnimateFloat(Image4,'Opacity',1,1.2);
+
+
 end;
 
-procedure TForm2.onanimateint(sender:TObject);
+procedure TForm2.onanimateint(Sender:TObject);
 begin
- FloatAnimation1.Inverse:=true;
- FloatAnimation1.start;
+   FloatAnimation1.Inverse:=true;
+  FloatAnimation1.Start;
 end;
 
 procedure TForm2.readlist;
 begin
-FDConnection1.Connected:=true;
-FDQuery1.SQL.Clear;
-FDQuery1.SQL.Add('select * from clientes');
-FDQuery1.Open;
-while not FDQuery1.Eof do
- begin
- cardframe:=TFrame1.Create(ListBox1);
- cardframe.Height:=126;
- cardframe.Width:=320;
- cardframe.Align:=TAlignLayout.Top;
- cardframe.Margins.Left:=12;
- cardframe.Margins.Right:=12;
- cardframe.Margins.Top:=8;
- cardframe.Parent:=ListBox1;
- cardframe.Opacity:=1;
- cardframe.TagString:=FDQuery1.FieldByName('id').AsString;
- cardframe.labnome.Text:=FDQuery1.FieldByName('nomepessoa').AsString;
- cardframe.labfoto.Text:=format_caracter(FDQuery1.FieldByName('nomepessoa').AsString);
- cardframe.Labcel.Text:=FDQuery1.FieldByName('cel').AsString;
- cardframe.labdetped.Text:=FDQuery1.FieldByName('pedidos').AsString;
- cardframe.imgaddped.TagString:=FDQuery1.FieldByName('nomepessoa').AsString;
- cardframe.imgaddped.OnClick:=newped;
- cardframe.Visible:=true;
- FDQuery1.Next;
- end;
+  FDQuery1.SQL.Clear;
+  FDQuery1.SQL.Add('select * from clientes');
+  FDQuery1.Open;
+  while not FDQuery1.Eof do
+  begin
+    cardframe:=TFrame1.Create(nil);
+    cardframe.Height:=126;
+    cardframe.Width:=320;
+    cardframe.Align:=TAlignLayout.Top;
+    cardframe.Margins.Left:=12;
+    cardframe.Margins.Right:=12;
+    cardframe.Margins.Top:=8;
+    cardframe.parent:=ListBox1;
+    cardframe.Opacity:=1;
+    cardframe.TagString:=FDQuery1.FieldByName('id').AsString;
+    cardframe.Layout11.TagString:=FDQuery1.FieldByName('nomepessoa').AsString;
+    cardframe.imgaddped.TagString:=FDQuery1.FieldByName('id').AsString;
+    cardframe.labnome.Text:=FDQuery1.FieldByName('nomepessoa').AsString;
+    cardframe.labfoto.Text:=format_caracter(FDQuery1.FieldByName('nomepessoa')
+     .AsString);
+    cardframe.Image1.TagString:=FDQuery1.FieldByName('id').AsString;
+    cardframe.Image1.OnClick:=loadinglistped;
+    cardframe.imglist_ped.TagString:=FDQuery1.FieldByName('nomepessoa').AsString;
+    cardframe.Labcel.Text:=FDQuery1.FieldByName('cel').AsString;
+    cardframe.labdetped.Text:=totalpedidosclientes.ToString;
+    cardframe.imgaddped.OnClick:=newped;
+    cardframe.Visible:=true;
+    listframecliente.Add(cardframe);
+    FDQuery1.Next;
+  end;
+ totpedclient('');
 end;
 
-procedure TForm2.SpeedButton1Click(Sender: TObject);
+procedure TForm2.SpeedButton1Click(Sender:TObject);
 begin
 {$IFDEF ANDROID}
+if Assigned(listcardprod) then
+       listcardprod.DisposeOf;
+if Assigned(listids) then
+      listids.DisposeOf;
+if Assigned(listframecliente) then
+      listframecliente.DisposeOf;
+if Assigned(qry) then
+      qry.DisposeOf;
 
+  MainActivity.finish;
 {$ENDIF}
- {$IFDEF MSWINDOWS}
-    Application.Terminate;
- {$ENDIF}
+{$IFDEF MSWINDOWS}
+  close;
+{$ENDIF}
 end;
 
-procedure TForm2.SpeedButton1MouseDown(Sender: TObject; Button: TMouseButton;
-  Shift: TShiftState; X, Y: Single);
+procedure TForm2.SpeedButton1MouseDown(Sender:TObject;Button:TMouseButton;
+Shift:TShiftState;X,Y:Single);
 begin
-SpeedButton1.Position.X:=SpeedButton1.Position.X-3;
+   SpeedButton1.Position.X:=SpeedButton1.Position.X- 3;
 end;
 
-procedure TForm2.SpeedButton1MouseUp(Sender: TObject; Button: TMouseButton;
-  Shift: TShiftState; X, Y: Single);
+procedure TForm2.SpeedButton1MouseUp(Sender:TObject;Button:TMouseButton;
+Shift:TShiftState;X,Y:Single);
 begin
-SpeedButton1.Position.X:=SpeedButton1.Position.X+3;
+   SpeedButton1.Position.X:=SpeedButton1.Position.X+ 3;
 end;
 
-procedure TForm2.Image1Click(Sender: TObject);
+procedure TForm2.Image1Click(Sender:TObject);
 begin
-TabControl1.GotoVisibleTab(1);
+   TabControl1.GotoVisibleTab(1);
 end;
 
-procedure TForm2.newped(sender:TObject);
+procedure TForm2.loadinglistped(Sender:TObject);
+var cardframepedido:TFrame3;
 begin
-SkLabel1.Words[1].Text:=TImage(sender).TagString;
+cardframepedido:=TFrame3.create(nil);
+cardframepedido.parent:=listbox2;
 
-TabControl1.GotoVisibleTab(2);
 end;
 
-
-procedure TForm2.Image1MouseDown(Sender: TObject; Button: TMouseButton;
-  Shift: TShiftState; X, Y: Single);
+procedure TForm2.newped(Sender:TObject);
 begin
-image1.Position.Y:=image1.Position.Y+3;
+   SkLabel1.Words[1].Text:=TImage(Sender).Parent.TagString;
+   TabControl1.GotoVisibleTab(2);
+   image3.TagString:=cardframe.imgaddped.TagString;
 end;
 
-procedure TForm2.Image1MouseUp(Sender: TObject; Button: TMouseButton;
-  Shift: TShiftState; X, Y: Single);
+procedure TForm2.Image1MouseDown(Sender:TObject;Button:TMouseButton;
+Shift:TShiftState;X,Y:Single);
 begin
-image1.Position.Y:=image1.Position.Y-3;
+   Image1.Position.Y:=Image1.Position.Y+ 3;
 end;
 
-procedure TForm2.Image2Click(Sender: TObject);
+procedure TForm2.Image1MouseUp(Sender:TObject;Button:TMouseButton;
+Shift:TShiftState;X,Y:Single);
 begin
-TabControl1.GotoVisibleTab(0);
+   Image1.Position.Y:=Image1.Position.Y- 3;
 end;
 
-procedure TForm2.Image2MouseDown(Sender: TObject; Button: TMouseButton;
-  Shift: TShiftState; X, Y: Single);
+procedure TForm2.Image2Click(Sender:TObject);
 begin
-image2.Position.Y:=image2.Position.Y+3;
+   TabControl1.GotoVisibleTab(0);
 end;
 
-procedure TForm2.Image2MouseUp(Sender: TObject; Button: TMouseButton;
-Shift: TShiftState; X, Y: Single);
+procedure TForm2.Image2MouseDown(Sender:TObject;Button:TMouseButton;
+Shift:TShiftState;X,Y:Single);
 begin
-image2.Position.Y:=image2.Position.Y-3;
+   Image2.Position.Y:=Image2.Position.Y+ 3;
 end;
 
-procedure TForm2.Image4Click(Sender: TObject);
+procedure TForm2.Image2MouseUp(Sender:TObject;Button:TMouseButton;
+Shift:TShiftState;X,Y:Single);
+begin
+   Image2.Position.Y:=Image2.Position.Y- 3;
+end;
+
+procedure TForm2.Image3Click(Sender:TObject);
+begin
+   TabControl1.GotoVisibleTab(3);
+   Layout27.Visible:=true;
+   Layout3.Visible:=false;
+   txtsaldo.Text:='R$ '+FormatFloat('#,##0.00',calculoped);
+end;
+
+procedure TForm2.montcart;
+begin
+ if not Assigned(listcardprod) then
+     begin
+        if not Assigned(listids) then
+        begin
+         listids:=TStringlist.Create;
+         listids.add(idprod);
+        end;
+       listcardprod:=TObjectList<TFrame2>.create;
+       listcardprod.Add(create_cardprod(edtcod.Text,edtdescricao.Text,edtquant.Text,edit1.Text));
+       listcardprod[0].Align:=TAlignLayout.Top;
+       listcardprod[0].Parent:=VertScrollBox2;
+      end
+      else
+      begin
+        listcardprod.Add(create_cardprod(edtcod.Text,edtdescricao.Text,edtquant.Text,edit1.Text));
+        listids.add(idprod);
+        listcardprod[countcard-1].Align:=TAlignLayout.Top;
+       listcardprod[countcard-1].Margins.top:=8;
+       listcardprod[countcard-1].Parent:=VertScrollBox2;
+      end;
+end;
+
+procedure TForm2.Button2Click(Sender: TObject);
 var td:TThread;
+str,ids,outids,strdate:string;
+strchar:char;
 begin
+outids:='';
+strdate:=FormatDateTime('dd/mm/yyyy',now);
+for var d := 0 to listids.Count-1 do
+  begin
+  ids:=listids.Strings[d]+'#';
+  outids:=outids+ids;
+  end;
+outids:=outids.Remove(outids.Length-1,1);
 td:=TThread.CreateAnonymousThread(procedure
     begin
-      if saveproddatabase then
+       FDConnection1.Connected:=true;
+        FDQuery1.SQL.Clear;
+        FDQuery1.SQL.Add
+         ('insert into pedidos (id,name,date,entregue,pgto,itens) values (Hex(randomblob(2)),'+
+         QuotedStr(image3.TagString)+ ','+QuotedStr(strdate)+','+inttostr(0)+','+inttostr(0)+','+quotedstr(outids)+')');
+         FDQuery1.ExecSQL;
+    end);
+td.FreeOnTerminate:=true;
+td.OnTerminate:=nexttabproc;
+td.Start;
+end;
+
+procedure TForm2.totpedclient(clieid:string);
+var tr:TThread;
+begin
+qry.Connection:=FDConnection1;
+totalpedidosclientes:=0;
+tr:=TThread.CreateAnonymousThread(procedure
+ begin
+  sleep(500);
+   qry.Active:=false;
+     for var i:= 0 to pred(listframecliente.Count) do
+     begin
+      qry.SQL.Clear;
+      qry.SQL.Add('select * from pedidos where name='+quotedstr(listframecliente.Items[i].TagString));
+      qry.Active:=true;
+      totalpedidosclientes:=qry.RecordCount;
+      qry.Active:=false;
+
+   TThread.Synchronize(TThread.CurrentThread,procedure
+     begin
+       listframecliente.Items[i].labdetped.Text:=totalpedidosclientes.ToString;
+     end);
+
+     end;
+    end);
+tr.FreeOnTerminate:=true;
+tr.OnTerminate:=settotalpedidosclients;
+tr.Start;
+end;
+
+procedure TForm2.settotalpedidosclients(sender:TObject);
+begin
+ if Assigned(TThread(sender).FatalException) then
+ begin
+   showmessage(EXception(TThread(sender).FatalException).Message);
+ end;
+
+end;
+
+procedure TForm2.nexttabproc(sender:TObject);
+begin
+if Assigned(TThread(sender).FatalException)  then
+  begin
+    showmessage(EXception(TThread(sender).FatalException).Message);
+  end
+   else
+    begin
+    reloadlist(1);
+    end;
+end;
+
+procedure TForm2.reloadlist(ind:integer);
+begin
+     listbox1.Clear;
+      for var I := 0 to pred(listframecliente.Count) do
         begin
-           FDConnection1.Connected:=true;
-           FDQuery1.SQL.Clear;
-           FDQuery1.SQL.Add('insert into produto(id,codeudora,descricao) values (Hex(randomblob(2)),'+
-           QuotedStr(edtcod.Text)+','+QuotedStr(edtdescricao.Text)+')');
-           FDQuery1.ExecSQL;
-          inc(countped,1);
+          listframecliente.Items[i].DisposeOf;
         end;
-      TThread.Synchronize(TThread.CurrentThread,procedure
+      listbox1.BeginUpdate;
+      readlist;
+      ListBox1.EndUpdate;
+      tabcontrol1.GotoVisibleTab(ind);
+end;
+
+function TForm2.create_cardprod(cod,desc,quant,valor:string):TFrame2;
+var mycardcart:TFrame2;
+begin
+  mycardcart:=TFrame2.Create(VertScrollBox2);
+  mycardcart.Labdescricao.Text:=desc;
+  mycardcart.SkLabcodprod.Words[1].Text:=cod;
+  mycardcart.Edit1.Text:=quant;
+  mycardcart.Name:='mycard'+countcard.tostring;
+  mycardcart.SkLab_valprod.Words[1].Text:=valor;
+  mycardcart.calculavalor;
+  calculoped:=calculoped+mycardcart.valorcalculadoped;
+  inc(countcard,1);
+  Result:=mycardcart;
+end;
+
+procedure TForm2.Image4Click(Sender:TObject);
+var td:TThread;
+begin
+   td:=TThread.CreateAnonymousThread(procedure
+    begin
+      if saveproddatabase then
+      begin
+        FDConnection1.Connected:=true;
+        FDQuery1.SQL.Clear;
+        FDQuery1.SQL.Add
+         ('insert into produto(id,codeudora,descricao,valor) values (Hex(randomblob(2)),'+
+         QuotedStr(edtcod.Text)+ ','+ QuotedStr(edtdescricao.Text)+','+quotedstr(edit1.Text)+')');
+        FDQuery1.ExecSQL;
+      end;
+    montcart;
+      TThread.Synchronize(TThread.CurrentThread, procedure
         begin
-           edtcod.Text:='';
-           edtquant.Text:='';
-           edtdescricao.Text:='';
-           edtcod.SetFocus;
-           inc(countped,1);
+          edtcod.Text:='';
+          edtquant.Text:='1';
+          edtdescricao.Text:='';
+          edit1.text:='';
+          edtcod.SetFocus;
+          inc(countped,1);
            Application.ProcessMessages;
         end);
 
     end);
-td.FreeOnTerminate:=true;
-td.OnTerminate:=onanimateint;
-td.Start;
-
-
-
+   td.FreeOnTerminate:=true;
+  td.OnTerminate:=onanimateint;
+  td.Start;
 
 end;
 
-procedure TForm2.Image4MouseDown(Sender: TObject; Button: TMouseButton;
-  Shift: TShiftState; X, Y: Single);
+procedure TForm2.Image4MouseDown(Sender:TObject;Button:TMouseButton;
+Shift:TShiftState;X,Y:Single);
 begin
-image4.Position.Y:=image4.Position.Y+3;
+   Image4.Position.Y:=Image4.Position.Y+ 3;
 end;
 
-procedure TForm2.Image4MouseUp(Sender: TObject; Button: TMouseButton;
-  Shift: TShiftState; X, Y: Single);
+procedure TForm2.Image4MouseUp(Sender:TObject;Button:TMouseButton;
+Shift:TShiftState;X,Y:Single);
 begin
-image4.Position.Y:=image4.Position.Y-3;
+   Image4.Position.Y:=Image4.Position.Y- 3;
 end;
 
 end.
