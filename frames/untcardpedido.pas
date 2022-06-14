@@ -22,6 +22,11 @@ type
     Layout5: TLayout;
     Image1: TImage;
     Rectangle1: TRectangle;
+    Label2: TLabel;
+    procedure Image1MouseDown(Sender: TObject; Button: TMouseButton;
+      Shift: TShiftState; X, Y: Single);
+    procedure Image1MouseUp(Sender: TObject; Button: TMouseButton;
+      Shift: TShiftState; X, Y: Single);
   private
     { Private declarations }
   public
@@ -31,5 +36,17 @@ type
 implementation
 
 {$R *.fmx}
+
+procedure TFrame3.Image1MouseDown(Sender: TObject; Button: TMouseButton;
+  Shift: TShiftState; X, Y: Single);
+begin
+image1.Position.Y:=image1.Position.Y+3;
+end;
+
+procedure TFrame3.Image1MouseUp(Sender: TObject; Button: TMouseButton;
+  Shift: TShiftState; X, Y: Single);
+begin
+image1.Position.Y:=image1.Position.Y-3;
+end;
 
 end.

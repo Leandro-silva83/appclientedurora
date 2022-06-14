@@ -91,9 +91,6 @@ Coordinates=445,232,80,36
 [Layout4]
 Coordinates=375,232,60,36
 
-[ListBox1]
-Coordinates=10,10,139,212
-
 [tablist_client]
 Coordinates=279,232,86,36
 
@@ -104,7 +101,7 @@ Coordinates=142,232,57,58
 Coordinates=209,232,60,36
 
 []
-Coordinates=10,232,59,58
+Coordinates=10,10,139,212
 Visible=True
 
 [tbinewped]

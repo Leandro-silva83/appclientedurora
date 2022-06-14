@@ -1,0 +1,85 @@
+object Frame4: TFrame4
+  Align = Top
+  Margins.Left = 8.000000000000000000
+  Margins.Right = 8.000000000000000000
+  Position.X = 8.000000000000000000
+  Size.Width = 312.000000000000000000
+  Size.Height = 152.000000000000000000
+  Size.PlatformDefault = False
+  object Layout1: TLayout
+    Align = Client
+    Size.Width = 312.000000000000000000
+    Size.Height = 152.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+    object Rectangle1: TRectangle
+      Align = Contents
+      Fill.Color = xFFF6F6F6
+      Size.Width = 312.000000000000000000
+      Size.Height = 152.000000000000000000
+      Size.PlatformDefault = False
+      XRadius = 16.000000000000000000
+      YRadius = 16.000000000000000000
+    end
+    object Label1: TLabel
+      Align = Top
+      StyledSettings = []
+      Margins.Left = 10.000000000000000000
+      Margins.Right = 25.000000000000000000
+      Position.X = 10.000000000000000000
+      Size.Width = 277.000000000000000000
+      Size.Height = 33.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.Font.Family = 'Segoe Print'
+      TextSettings.Font.Size = 16.000000000000000000
+      TextSettings.Font.StyleExt = {00070000000200000004000000}
+      TextSettings.FontColor = claDarkblue
+      Text = 'C'#243'digo Eudora'
+      TabOrder = 2
+      object Labcod: TLabel
+        Align = Right
+        StyledSettings = [Style]
+        Position.X = 157.000000000000000000
+        Size.Width = 120.000000000000000000
+        Size.Height = 33.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.Font.Family = 'Segoe Print'
+        TextSettings.Font.Size = 16.000000000000000000
+        TextSettings.FontColor = claDarkred
+        TabOrder = 4
+      end
+    end
+    object Labdesc: TLabel
+      Align = Top
+      AutoSize = True
+      StyledSettings = []
+      Margins.Left = 10.000000000000000000
+      Margins.Right = 40.000000000000000000
+      Position.X = 10.000000000000000000
+      Position.Y = 33.000000000000000000
+      Size.Width = 262.000000000000000000
+      Size.Height = 29.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.Font.Family = 'Segoe Print'
+      TextSettings.Font.Size = 16.000000000000000000
+      TextSettings.Font.StyleExt = {00070000000200000004000000}
+      TabOrder = 1
+    end
+    object Labvalor: TLabel
+      Align = Top
+      StyledSettings = []
+      Margins.Left = 10.000000000000000000
+      Margins.Right = 40.000000000000000000
+      Position.X = 10.000000000000000000
+      Position.Y = 62.000000000000000000
+      Size.Width = 262.000000000000000000
+      Size.Height = 33.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.Font.Family = 'Segoe Print'
+      TextSettings.Font.Size = 16.000000000000000000
+      TextSettings.Font.StyleExt = {00070000000200000004000000}
+      TextSettings.FontColor = claDarkblue
+      TabOrder = 0
+    end
+  end
+end

@@ -34,6 +34,14 @@ type
     Rectangle1: TRectangle;
     Layout9: TLayout;
     Image2: TImage;
+    procedure imgaddpedMouseDown(Sender: TObject; Button: TMouseButton;
+      Shift: TShiftState; X, Y: Single);
+    procedure imgaddpedMouseUp(Sender: TObject; Button: TMouseButton;
+      Shift: TShiftState; X, Y: Single);
+    procedure imglist_pedMouseDown(Sender: TObject; Button: TMouseButton;
+      Shift: TShiftState; X, Y: Single);
+    procedure imglist_pedMouseUp(Sender: TObject; Button: TMouseButton;
+      Shift: TShiftState; X, Y: Single);
 
   private
     { Private declarations }
@@ -46,5 +54,29 @@ implementation
 {$R *.fmx}
 
 
+
+procedure TFrame1.imgaddpedMouseDown(Sender: TObject; Button: TMouseButton;
+  Shift: TShiftState; X, Y: Single);
+begin
+imgaddped.Position.Y:=imgaddped.Position.Y+3;
+end;
+
+procedure TFrame1.imgaddpedMouseUp(Sender: TObject; Button: TMouseButton;
+  Shift: TShiftState; X, Y: Single);
+begin
+imgaddped.Position.Y:=imgaddped.Position.Y-3;
+end;
+
+procedure TFrame1.imglist_pedMouseDown(Sender: TObject; Button: TMouseButton;
+  Shift: TShiftState; X, Y: Single);
+begin
+imglist_ped.Position.Y:=imglist_ped.Position.Y+3;
+end;
+
+procedure TFrame1.imglist_pedMouseUp(Sender: TObject; Button: TMouseButton;
+  Shift: TShiftState; X, Y: Single);
+begin
+imglist_ped.Position.Y:=imglist_ped.Position.Y-3;
+end;
 
 end.
