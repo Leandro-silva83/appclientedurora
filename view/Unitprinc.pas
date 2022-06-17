@@ -191,6 +191,14 @@ type
     procedure FormCreate(Sender:TObject);
     procedure edtcelTyping(Sender:TObject);
     procedure SpeedButton2Click(Sender:TObject);
+    procedure Button1MouseDown(Sender: TObject; Button: TMouseButton;
+      Shift: TShiftState; X, Y: Single);
+    procedure Button1MouseUp(Sender: TObject; Button: TMouseButton;
+      Shift: TShiftState; X, Y: Single);
+    procedure Button2MouseDown(Sender: TObject; Button: TMouseButton;
+      Shift: TShiftState; X, Y: Single);
+    procedure Button2MouseUp(Sender: TObject; Button: TMouseButton;
+      Shift: TShiftState; X, Y: Single);
     private
     lt: TStringList;
       procedure readlist;
@@ -208,6 +216,8 @@ type
       procedure loadinglistped(Sender:TObject);
     procedure endtthreadreadlist(sender: TObject);
     procedure clicklistitensped(sender: TObject);
+    procedure playclick;
+    procedure playok;
     var
       cardframe:TFrame1;
     var
@@ -253,7 +263,8 @@ uses uFormat
 procedure TForm2.Button1Click(Sender:TObject);
 var tr:TThread;
 begin
-   FDConnection1.Connected:=true;
+
+  FDConnection1.Connected:=true;
   tr:=TThread.CreateAnonymousThread(procedure
     begin
       FDQuery1.SQL.Clear;
@@ -265,6 +276,14 @@ begin
   tr.FreeOnTerminate:=true;
   tr.OnTerminate:=endthreadinsertclient;
   tr.Start;
+end;
+
+procedure TForm2.playok;
+begin
+{$IFDEF MSWINDOWS}
+mediaplayer1.FileName:='C:\Users\Bete\Documents\Embarcadero\Studio\Projects\appclientedurora\sound\soun1.wav';
+MediaPlayer1.Play;
+{$ENDIF}
 end;
 
 procedure TForm2.endthreadinsertclient(Sender:TObject);
@@ -455,6 +474,8 @@ end;
 
 procedure TForm2.SpeedButton1Click(Sender:TObject);
 begin
+playclick;
+sleep(900);
 {$IFDEF ANDROID}
   if Assigned(listcardprod) then
      listcardprod.DisposeOf;
@@ -486,7 +507,8 @@ end;
 
 procedure TForm2.SpeedButton2Click(Sender:TObject);
 begin
-   SpeedButton1.Visible:=true;
+  playclick;
+  SpeedButton1.Visible:=true;
   SpeedButton2.Visible:=false;
   if (TabControl1.tabIndex= 0)or (TabControl1.tabIndex= 2) then
   begin
@@ -497,6 +519,7 @@ end;
 
 procedure TForm2.Image1Click(Sender:TObject);
 begin
+   playclick;
    TabControl1.GotoVisibleTab(1);
 end;
 
@@ -552,9 +575,18 @@ begin
 
 end;
 
+procedure TForm2.playclick;
+begin
+{$IFDEF MSWINDOWS}
+ MediaPlayer1.FileName:='C:\Users\Bete\Documents\Embarcadero\Studio\Projects\appclientedurora\sound\tecla.wav';
+ mediaplayer1.Play;
+{$ENDIF}
+end;
+
 procedure TForm2.clicklistitensped(sender:TObject);
 var cardprod:TFrame4;
 begin
+playclick;
  for var I:=0  to lt.Count-1 do
    begin
    lt.Strings[i]:=lt.Strings[i].Remove(4,2);
@@ -575,7 +607,8 @@ end;
 
 procedure TForm2.newped(Sender:TObject);
 begin
-   SkLabel1.Words[1].Text:=TImage(Sender).parent.TagString;
+  playclick;
+  SkLabel1.Words[1].Text:=TImage(Sender).parent.TagString;
   TabControl1.GotoVisibleTab(2);
   Image3.TagString:=cardframe.imgaddped.TagString;
   SpeedButton1.Visible:=false;
@@ -596,7 +629,8 @@ end;
 
 procedure TForm2.Image2Click(Sender:TObject);
 begin
-   TabControl1.GotoVisibleTab(0);
+  playclick;
+  TabControl1.GotoVisibleTab(0);
   SpeedButton1.Visible:=false;
   SpeedButton2.Visible:=true;
 end;
@@ -615,7 +649,8 @@ end;
 
 procedure TForm2.Image3Click(Sender:TObject);
 begin
-   TabControl1.GotoVisibleTab(3);
+  playclick;
+  TabControl1.GotoVisibleTab(3);
   Layout27.Visible:=true;
   Layout3.Visible:=false;
   txtsaldo.Text:='R$ '+ FormatFloat('#,##0.00',calculoped);
@@ -647,12 +682,25 @@ begin
   end;
 end;
 
+procedure TForm2.Button1MouseDown(Sender: TObject; Button: TMouseButton;
+  Shift: TShiftState; X, Y: Single);
+begin
+Button1.Position.Y:=Button1.Position.Y+3;
+end;
+
+procedure TForm2.Button1MouseUp(Sender: TObject; Button: TMouseButton;
+  Shift: TShiftState; X, Y: Single);
+begin
+Button1.Position.Y:=Button1.Position.Y-3;
+end;
+
 procedure TForm2.Button2Click(Sender:TObject);
 var td:TThread;
   str,ids,outids,strdate:string;
   strchar:char;
 begin
-   outids:='';
+  playok;
+  outids:='';
   strdate:=FormatDateTime('dd/mm/yyyy',now);
   for var d:=0 to listids.Count- 1 do
   begin
@@ -675,6 +723,18 @@ begin
   td.FreeOnTerminate:=true;
   td.OnTerminate:=nexttabproc;
   td.Start;
+end;
+
+procedure TForm2.Button2MouseDown(Sender: TObject; Button: TMouseButton;
+  Shift: TShiftState; X, Y: Single);
+begin
+Button2.Position.Y:=Button2.Position.Y+3;
+end;
+
+procedure TForm2.Button2MouseUp(Sender: TObject; Button: TMouseButton;
+  Shift: TShiftState; X, Y: Single);
+begin
+Button2.Position.Y:=Button2.Position.Y-3;
 end;
 
 procedure TForm2.totpedclient(clieid:string);
@@ -762,6 +822,7 @@ end;
 procedure TForm2.Image4Click(Sender:TObject);
 var td:TThread;
 begin
+ playclick;
    td:=TThread.CreateAnonymousThread(procedure
     begin
       if saveproddatabase then

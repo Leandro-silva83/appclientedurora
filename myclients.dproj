@@ -201,9 +201,8 @@
             <Form>Form2</Form>
             <FormType>fmx</FormType>
         </DCCReference>
-        <DCCReference Include="untcard_prod.pas">
+        <DCCReference Include="frames\untcard_prod.pas">
             <Form>Frame2</Form>
-            <FormType>fmx</FormType>
             <DesignClass>TFrame</DesignClass>
         </DCCReference>
         <DCCReference Include="lib\uFormat.pas"/>

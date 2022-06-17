@@ -29,6 +29,6 @@
     <Transaction>2022/06/13 18:21:32.000.288,C:\Users\Bete\Documents\Embarcadero\Studio\Projects\appclientedurora\Unit4.fmx=C:\Users\Bete\Documents\Embarcadero\Studio\Projects\appclientedurora\frames\untcardproduto.fmx</Transaction>
   </Transactions>
 	<ActiveMobileDevice>
-		<NoProfile Android64="AVD_Resc" Android="AVD_for_Nexus_S_by_Google"/>
+		<NoProfile Android64="AVD_Resc" Android="AVD_Resc"/>
 	</ActiveMobileDevice>
 </BorlandProject>
